@@ -1,0 +1,12 @@
+{
+  "name": "peach-blossom-world",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4186 --bind 127.0.0.1",
+    "test": "node --check app.js && node scripts/exploration-v17.cjs && node scripts/departure-v15.cjs && node scripts/compact-ui-v14.cjs",
+    "check": "node --check app.js && node --check navigation.js && node --check music.js && node --check soundscape.js",
+    "build": "node scripts/build.mjs",
+    "deploy": "npm run check && npm run build && wrangler pages deploy dist --project-name peach-blossom-world --branch main"
+  }
+}

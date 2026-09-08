@@ -1,0 +1,5 @@
+import assert from 'node:assert/strict';
+import {createSceneNavigation} from '../navigation.js';
+const nav=createSceneNavigation();assert(!nav.house.valid(0,1),'table blocks');assert(!nav.house.valid(3.7,-3.6),'bed blocks');assert(!nav.house.valid(-4,-4.7),'shelf blocks');assert(!nav.house.valid(-3.7,-3),'stove blocks');assert(!nav.house.valid(-6,0),'wall blocks');assert(nav.house.valid(0,7),'courtyard spawn');assert.equal(nav.house.floor(0,3.2),.85);
+for(const target of [{x:0,z:-1.5},{x:4,z:-.7},{x:-4,z:-1}]){const start={x:0,z:7},path=nav.house.path(start,target);assert(path.length>0,'find route around table');let last=start;for(const p of path){assert(nav.house.clear(last,p),'route must not cut furniture');last=p}}
+assert(nav.cave.path({x:7.5,z:-42},{x:9,z:-68}).length>0);assert(!nav.cave.valid(10,-60));assert(nav.overview.path({x:0,z:20},{x:0,z:6}).length>0);assert(nav.pond.path({x:-8,z:8},{x:-9,z:-7}).length>0);console.log('PASS furniture collision, corridor clearance, and scene routes');
