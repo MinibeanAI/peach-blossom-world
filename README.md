@@ -1,5 +1,7 @@
 # 桃花源 · 山中一日
 
+[在线游玩](https://peach-blossom-world.pages.dev/) · [GitHub 仓库](https://github.com/MinibeanAI/peach-blossom-world)
+
 以《桃花源记》为背景的 Three.js 网页 3D 探索小游戏。沿溪划船、穿山访村，在田园散步、围桌听故事，最后归舟离开；回头再寻时，山口已无迹可寻。
 
 ## 玩法
